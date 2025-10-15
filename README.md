@@ -1,6 +1,5 @@
 My notes
 LINUX COMMANDS 
-
 pwd - print working directory
 mkdir - make directory
 
