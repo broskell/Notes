@@ -19,8 +19,7 @@ ls - listing
    - ls -ltr = lists according to time with octal codes
 
 cp – Copy a file or directory to another location
-info – The GNU alternative to man
-man – The standard unix documentation system
+man or --help – The standard unix documentation system
 mv – Move or rename a file or directory
 rmdir – Delete an empty directory
 touch – Create a new file or update its modification time
@@ -42,8 +41,7 @@ cat – Concatenate files to standard output
 less – Improved more-like text pager
 head – Output the first parts of a file
 tail - Output the last parts of a file
-cut – Remove sections from each line of a file or
-standard input
+cut – Remove sections from each line of a file or standard input
 paste - merge lines of files
 diff – Compare two text files line by line
 
