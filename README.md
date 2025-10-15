@@ -31,14 +31,11 @@ wc - print newline, word, and byte counts for each file
 less – opposite of more ;)
 locate - find files by name
 ln – Link one file/directory to another
-df – Report disk space
-strings - print the strings of printable characters in files.
 find – Search for files through a directory hierarchy
 chgrp – Change the group of a file or directory
 chmod – Change the permissions of a file or directory
 chown – Change the owner of a file or directory
-quota – display disk usage and limits
-du – Calculate used disk space
+
 
 echo – display line of text
 cat – Concatenate files to standard output
@@ -51,7 +48,6 @@ paste - merge lines of files
 diff – Compare two text files line by line
 
 more – Pager
-sed – Stream EDitor
 sort – Sort lines of text files
 grep – Print lines matching a pattern
 split – Split a file into pieces
