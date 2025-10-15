@@ -17,17 +17,23 @@ ls - listing
    - ls -l = lists files with principles & octal codes
    - ls -la = lits hidden files with octal codes
    - ls -ltr = lists according to time with octal codes
-
+cat - concatenate
+    - cat file.txt - creates a file
+    - cat > file.txt - creates if not existed, if exists it overrides
+    - cat >> file.txt - appends 
 cp – Copy a file or directory to another location
 man or --help – The standard unix documentation system
 mv – Move or rename a file or directory
 rmdir – Delete an empty directory
 touch – Create a new file or update its modification time
+      - touch -c - it won't create file it already exists.
 rm – Delete a file or directory tree
+   - rm -f
+   - rm -r 
 which - locate a command 
 wc - print newline, word, and byte counts for each file
 
-less – opposite of more ;)
+less – opposite of more
 locate - find files by name
 ln – Link one file/directory to another
 find – Search for files through a directory hierarchy
