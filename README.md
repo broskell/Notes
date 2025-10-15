@@ -7,6 +7,11 @@ diff b/w directory & file
 directory is bag and file is book
 
 cd - change direcotry
+   - cd      - main directory
+   - cd -    - swap
+   - cd..    - one step back
+   - cd../.. - two steps back
+   - cd ~    - main directory
 ls - listing
    - ls -a = lists hidden files
    - ls -l = lists files with principles & octal codes
