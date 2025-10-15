@@ -45,8 +45,20 @@ cut – Remove sections from each line of a file or standard input
 paste - merge lines of files
 diff – Compare two text files line by line
 
-more – Pager
-sort – Sort lines of text files
-grep – Print lines matching a pattern
-split – Split a file into pieces
-tail – Output the tail end of files
+
+find - goes to all files 
+locate - only selected files and fast
+gref - global regular expression print [Print lines matching a pattern]
+     - . - finds charac in a single but not new line.
+     - * - finds charc which is [one or more]
+     - ? - finds charac preceeding or next [0 or 1]
+     - + - Matches one or more occurrences of the preceding character or group.
+     - $ - Matches the end of a line or string.
+     - ^ - find the words starting with it
+     - [] - Matches any single character within the brackets
+     - {} - range 
+     - /w - words {a-z A-Z 0-9 including underscore and all}
+     - /d - digits 
+     - /s - spacing 
+     - [a | b] - either a or b.
+\ - special charc which escapes commands but not in []
