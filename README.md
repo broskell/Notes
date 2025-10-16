@@ -1,71 +1,126 @@
-My notes
-LINUX COMMANDS 
-pwd - print working directory
-mkdir - make directory
+Linux Commands Cheat Sheet
+A concise, beginner-friendly reference for common Linux commands, with corrected examples and quick explanations.
+Contents
+Navigation
+Files and directories
+Viewing and paging
+Search and find
+Links
+Permissions and ownership
+System info and help
+Text processing
+Regex quick guide
+Safety tips
+Navigation
+pwd — print working directory
+cd — change directory
+cd or cd ~ — go to home directory
+cd - — switch to previous directory
+cd .. — up one level
+cd ../.. — up two levels
+ls — list files
+ls -a — include hidden files
+ls -l — long listing with permissions and sizes
+ls -la — long listing including hidden files
+ls -ltr — sort by time, newest last
+Files and directories
+mkdir name — create directory
+touch file — create empty file or update its timestamp
+touch -c file — do not create if missing
+cat file — print file contents
+cat > file.txt — write from stdin, overwrites file
+cat >> file.txt — append from stdin
+cp SRC DEST — copy file
+cp -r SRC_DIR DEST_DIR — copy directory recursively
+mv SRC DEST — move or rename
+rm file — remove file
+rm -f file — force remove, no prompt
+rm -r dir — remove directory recursively
+rmdir dir — remove empty directory
+Viewing and paging
+less file — pager for viewing content
+head file — first 10 lines
+head -n 25 file
+tail file — last 10 lines
+tail -n 50 file
+tail -f file — follow appended output
+Search and find
+which cmd — path to an executable
+locate name — fast filename lookup using a database
+find PATH -name "pattern" — search by name in directory tree
+Examples:
+find . -type f -name "*.txt"
+find /var/log -type f -mtime -1
+grep "pattern" file — print lines matching a pattern
+grep -i case-insensitive
+grep -r recursive
+grep -n show line numbers
+Tip: the command is grep, not “gref”
+Links
+ln SRC LINK — hard link
+ln -s SRC LINK — symbolic (soft) link
+Permissions and ownership
+chmod MODE file — change permissions
+Symbolic: chmod u+rwx,g+rx,o-r file
+Octal: chmod 755 script.sh
+chown USER file — change owner
+chown USER:GROUP file — change owner and group
+chgrp GROUP file — change group
+System info and help
+man cmd — manual for a command
+cmd --help — short help for many commands
+wc file — line, word, byte counts
+wc -l, wc -w, wc -c
+Text processing
+echo "text" — print a line of text
+paste file1 file2 — merge lines side-by-side
+cut -d',' -f1,3 file.csv — select fields
+diff fileA fileB — line-by-line difference
+Common pipelines:
+cat file | grep pattern | wc -l
+grep -r "ERROR" logs/ | less
+Regex quick guide for grep/egrep
+. — any single character except newline
+* — zero or more of preceding
+? — zero or one of preceding
++ — one or more of preceding
+^ — start of line
+$ — end of line
+[abc] — any one of a, b, or c
+[^abc] — any one character except a, b, or c
+[a-z] — range
+{m,n} — repetition count range
+\w — word char [A-Za-z0-9_]
+\d — digit
+\s — whitespace
+(a|b) — a or b
+Escape special chars with \ when you need literal matches
+Tip: use extended regex with grep -E to enable +, ?, {} without escaping.
+Safety tips
+Test destructive commands with echo first:
+echo rm -rf "$TARGET"
+Prefer interactive prompts when unsure:
+rm -ri dir
+Quote paths with spaces:
+mv "My File.txt" "MyFile.txt"
+Examples
+# Create a project and navigate
+mkdir -p projects/demo && cd projects/demo && pwd
 
-diff b/w directory & file
-directory is bag and file is book
+# Make files and list with details
+touch README.md main.py
+ls -la
 
-cd - change direcotry
-   - cd      - main directory
-   - cd -    - swap
-   - cd..    - one step back
-   - cd../.. - two steps back
-   - cd ~    - main directory
-ls - listing
-   - ls -a = lists hidden files
-   - ls -l = lists files with principles & octal codes
-   - ls -la = lits hidden files with octal codes
-   - ls -ltr = lists according to time with octal codes
-cat - concatenate
-    - cat file.txt - creates a file
-    - cat > file.txt - creates if not existed, if exists it overrides
-    - cat >> file.txt - appends 
-cp – Copy a file or directory to another location
-man or --help – The standard unix documentation system
-mv – Move or rename a file or directory
-rmdir – Delete an empty directory
-touch – Create a new file or update its modification time
-      - touch -c - it won't create file it already exists.
-rm – Delete a file or directory tree
-   - rm -f
-   - rm -r 
-which - locate a command 
-wc - print newline, word, and byte counts for each file
+# Search recursively for TODOs
+grep -Rni "TODO" .
 
-less – opposite of more
-locate - find files by name
-ln – Link one file/directory to another
-find – Search for files through a directory hierarchy
-chgrp – Change the group of a file or directory
-chmod – Change the permissions of a file or directory
-chown – Change the owner of a file or directory
+# Find large logs modified in last day
+find /var/log -type f -size +5M -mtime -1 -print
 
+# Compare two configs
+diff -u config.old config.new | less
 
-echo – display line of text
-cat – Concatenate files to standard output
-less – Improved more-like text pager
-head – Output the first parts of a file
-tail - Output the last parts of a file
-cut – Remove sections from each line of a file or standard input
-paste - merge lines of files
-diff – Compare two text files line by line
-
-
-find - goes to all files 
-locate - only selected files and fast
-gref - global regular expression print [Print lines matching a pattern]
-     - . - finds charac in a single but not new line.
-     - * - finds charc which is [one or more]
-     - ? - finds charac preceeding or next [0 or 1]
-     - + - Matches one or more occurrences of the preceding character or group.
-     - $ - Matches the end of a line or string.
-     - ^ - find the words starting with it
-     - [] - Matches any single character within the brackets
-     - {} - range 
-     - /w - words {a-z A-Z 0-9 including underscore and all}
-     - /d - digits 
-     - /s - spacing 
-     - [a | b] - either a or b.
-\ - special charc which escapes commands but not in []
+# Fix permissions and ownership
+chmod 755 deploy.sh
+chown ubuntu:ubuntu deploy.sh
 
